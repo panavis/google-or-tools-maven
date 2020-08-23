@@ -21,3 +21,8 @@ In addition to those three dependencies, the generated Java classes were missing
 Added the classes to the repo from the official OR-Tools Java Reference (https://google.github.io/or-tools/java/namespaces.html)
 
 In addition, `protobuf-java` was updated to a later version (some classes were missing from the older version)
+
+### Publishing To Maven Repository
+
+Mostly followed: https://dzone.com/articles/publish-your-artifacts-to-maven-central  
+But also used ideas from: https://github.com/oliviercailloux/google-or-tools-java/blob/master/pom.xml
