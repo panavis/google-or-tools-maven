@@ -31,62 +31,62 @@ public class MPConstraint {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPConstraint(swigCPtr);
+        mainJNI.delete_MPConstraint(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public String name() {
-    return main_research_linear_solverJNI.MPConstraint_name(swigCPtr, this);
+    return mainJNI.MPConstraint_name(swigCPtr, this);
   }
 
   public void setCoefficient(MPVariable var, double coeff) {
-    main_research_linear_solverJNI.MPConstraint_setCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var, coeff);
+    mainJNI.MPConstraint_setCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var, coeff);
   }
 
   public double getCoefficient(MPVariable var) {
-    return main_research_linear_solverJNI.MPConstraint_getCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var);
+    return mainJNI.MPConstraint_getCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var);
   }
 
   public double lb() {
-    return main_research_linear_solverJNI.MPConstraint_lb(swigCPtr, this);
+    return mainJNI.MPConstraint_lb(swigCPtr, this);
   }
 
   public double ub() {
-    return main_research_linear_solverJNI.MPConstraint_ub(swigCPtr, this);
+    return mainJNI.MPConstraint_ub(swigCPtr, this);
   }
 
   public void setLb(double lb) {
-    main_research_linear_solverJNI.MPConstraint_setLb(swigCPtr, this, lb);
+    mainJNI.MPConstraint_setLb(swigCPtr, this, lb);
   }
 
   public void setUb(double ub) {
-    main_research_linear_solverJNI.MPConstraint_setUb(swigCPtr, this, ub);
+    mainJNI.MPConstraint_setUb(swigCPtr, this, ub);
   }
 
   public void setBounds(double lb, double ub) {
-    main_research_linear_solverJNI.MPConstraint_setBounds(swigCPtr, this, lb, ub);
+    mainJNI.MPConstraint_setBounds(swigCPtr, this, lb, ub);
   }
 
   public boolean isLazy() {
-    return main_research_linear_solverJNI.MPConstraint_isLazy(swigCPtr, this);
+    return mainJNI.MPConstraint_isLazy(swigCPtr, this);
   }
 
   public void setIsLazy(boolean laziness) {
-    main_research_linear_solverJNI.MPConstraint_setIsLazy(swigCPtr, this, laziness);
+    mainJNI.MPConstraint_setIsLazy(swigCPtr, this, laziness);
   }
 
   public int index() {
-    return main_research_linear_solverJNI.MPConstraint_index(swigCPtr, this);
+    return mainJNI.MPConstraint_index(swigCPtr, this);
   }
 
   public double dualValue() {
-    return main_research_linear_solverJNI.MPConstraint_dualValue(swigCPtr, this);
+    return mainJNI.MPConstraint_dualValue(swigCPtr, this);
   }
 
   public MPSolver.BasisStatus basisStatus() {
-    return MPSolver.BasisStatus.swigToEnum(main_research_linear_solverJNI.MPConstraint_basisStatus(swigCPtr, this));
+    return MPSolver.BasisStatus.swigToEnum(mainJNI.MPConstraint_basisStatus(swigCPtr, this));
   }
 
 }

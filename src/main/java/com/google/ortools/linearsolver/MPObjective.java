@@ -31,58 +31,58 @@ public class MPObjective {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPObjective(swigCPtr);
+        mainJNI.delete_MPObjective(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void clear() {
-    main_research_linear_solverJNI.MPObjective_clear(swigCPtr, this);
+    mainJNI.MPObjective_clear(swigCPtr, this);
   }
 
   public void setCoefficient(MPVariable var, double coeff) {
-    main_research_linear_solverJNI.MPObjective_setCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var, coeff);
+    mainJNI.MPObjective_setCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var, coeff);
   }
 
   public double getCoefficient(MPVariable var) {
-    return main_research_linear_solverJNI.MPObjective_getCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var);
+    return mainJNI.MPObjective_getCoefficient(swigCPtr, this, MPVariable.getCPtr(var), var);
   }
 
   public void setOffset(double value) {
-    main_research_linear_solverJNI.MPObjective_setOffset(swigCPtr, this, value);
+    mainJNI.MPObjective_setOffset(swigCPtr, this, value);
   }
 
   public double offset() {
-    return main_research_linear_solverJNI.MPObjective_offset(swigCPtr, this);
+    return mainJNI.MPObjective_offset(swigCPtr, this);
   }
 
   public void setOptimizationDirection(boolean maximize) {
-    main_research_linear_solverJNI.MPObjective_setOptimizationDirection(swigCPtr, this, maximize);
+    mainJNI.MPObjective_setOptimizationDirection(swigCPtr, this, maximize);
   }
 
   public void setMinimization() {
-    main_research_linear_solverJNI.MPObjective_setMinimization(swigCPtr, this);
+    mainJNI.MPObjective_setMinimization(swigCPtr, this);
   }
 
   public void setMaximization() {
-    main_research_linear_solverJNI.MPObjective_setMaximization(swigCPtr, this);
+    mainJNI.MPObjective_setMaximization(swigCPtr, this);
   }
 
   public boolean maximization() {
-    return main_research_linear_solverJNI.MPObjective_maximization(swigCPtr, this);
+    return mainJNI.MPObjective_maximization(swigCPtr, this);
   }
 
   public boolean minimization() {
-    return main_research_linear_solverJNI.MPObjective_minimization(swigCPtr, this);
+    return mainJNI.MPObjective_minimization(swigCPtr, this);
   }
 
   public double value() {
-    return main_research_linear_solverJNI.MPObjective_value(swigCPtr, this);
+    return mainJNI.MPObjective_value(swigCPtr, this);
   }
 
   public double bestBound() {
-    return main_research_linear_solverJNI.MPObjective_bestBound(swigCPtr, this);
+    return mainJNI.MPObjective_bestBound(swigCPtr, this);
   }
 
 }

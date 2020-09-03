@@ -31,46 +31,46 @@ public final class MPModelExportOptions {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPModelExportOptions(swigCPtr);
+        mainJNI.delete_MPModelExportOptions(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public MPModelExportOptions() {
-    this(main_research_linear_solverJNI.new_MPModelExportOptions(), true);
+    this(mainJNI.new_MPModelExportOptions(), true);
   }
 
   public void setObfuscate(boolean value) {
-    main_research_linear_solverJNI.MPModelExportOptions_Obfuscate_set(swigCPtr, this, value);
+    mainJNI.MPModelExportOptions_Obfuscate_set(swigCPtr, this, value);
   }
 
   public boolean getObfuscate() {
-    return main_research_linear_solverJNI.MPModelExportOptions_Obfuscate_get(swigCPtr, this);
+    return mainJNI.MPModelExportOptions_Obfuscate_get(swigCPtr, this);
   }
 
   public void setLogInvalidNames(boolean value) {
-    main_research_linear_solverJNI.MPModelExportOptions_LogInvalidNames_set(swigCPtr, this, value);
+    mainJNI.MPModelExportOptions_LogInvalidNames_set(swigCPtr, this, value);
   }
 
   public boolean getLogInvalidNames() {
-    return main_research_linear_solverJNI.MPModelExportOptions_LogInvalidNames_get(swigCPtr, this);
+    return mainJNI.MPModelExportOptions_LogInvalidNames_get(swigCPtr, this);
   }
 
   public void setShowUnusedVariables(boolean value) {
-    main_research_linear_solverJNI.MPModelExportOptions_ShowUnusedVariables_set(swigCPtr, this, value);
+    mainJNI.MPModelExportOptions_ShowUnusedVariables_set(swigCPtr, this, value);
   }
 
   public boolean getShowUnusedVariables() {
-    return main_research_linear_solverJNI.MPModelExportOptions_ShowUnusedVariables_get(swigCPtr, this);
+    return mainJNI.MPModelExportOptions_ShowUnusedVariables_get(swigCPtr, this);
   }
 
   public void setMaxLineLength(int value) {
-    main_research_linear_solverJNI.MPModelExportOptions_MaxLineLength_set(swigCPtr, this, value);
+    mainJNI.MPModelExportOptions_MaxLineLength_set(swigCPtr, this, value);
   }
 
   public int getMaxLineLength() {
-    return main_research_linear_solverJNI.MPModelExportOptions_MaxLineLength_get(swigCPtr, this);
+    return mainJNI.MPModelExportOptions_MaxLineLength_get(swigCPtr, this);
   }
 
 }

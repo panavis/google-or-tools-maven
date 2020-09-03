@@ -2,25 +2,29 @@
 
 Creating a Maven dependency for Google OR-Tools 
 
+Official Google Project: https://github.com/google/or-tools
+
 Inspired by: https://github.com/oliviercailloux/google-or-tools-java
 
-Following instructions from the URL above didn't exactly work for Version 7.8.
+Generated the project using `cmake`  
 
-On Ubuntu 18.04, the following dependencies were needed:
+https://github.com/google/or-tools/blob/stable/cmake/doc/java.md
 
-`automake` (`sudo apt-get install automake`)  
-`pck-config` (`sudo apt-get install pkg-config`)  
-`swig` (`sudo apt-get install swig`)
+```
+cmake -S. -Bbuild -DBUILD_JAVA=ON .
+cmake --build .
+cmake --build . --target java_package
+```
+**Note**: Execute those commands in the root directory of the repository.  
+Otherwise, replace '.' with the actual source directory.
 
-In addition to those three dependencies, the generated Java classes were missing three classes.
+Java classes and JNI libraries will be generated in `or-tools/java`  
 
-`IntIntToLongFunction.java`  
-`LongTernaryOperator.java`  
-`LongTernaryPredicate.java`
+From the `ortools-linux-x86-64`, grab the jar file.  
+Add to the `ortools-java` project as a local dependency.
 
-Added the classes to the repo from the official OR-Tools Java Reference (https://google.github.io/or-tools/java/namespaces.html)
-
-In addition, `protobuf-java` was updated to a later version (some classes were missing from the older version)
+**Note**: To create a jar for the whole project,  
+make sure you're running with `jar-with-dependencies`
 
 ### Publishing To Maven Repository
 

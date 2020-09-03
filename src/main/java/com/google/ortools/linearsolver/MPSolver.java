@@ -31,7 +31,7 @@ public class MPSolver {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPSolver(swigCPtr);
+        mainJNI.delete_MPSolver(swigCPtr);
       }
       swigCPtr = 0;
     }
@@ -85,175 +85,175 @@ public class MPSolver {
   }
 
   public MPSolver(String name, MPSolver.OptimizationProblemType problem_type) {
-    this(main_research_linear_solverJNI.new_MPSolver(name, problem_type.swigValue()), true);
+    this(mainJNI.new_MPSolver(name, problem_type.swigValue()), true);
   }
 
   public static MPSolver createSolver(String name, String solver_id) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_createSolver(name, solver_id);
+    long cPtr = mainJNI.MPSolver_createSolver(name, solver_id);
     return (cPtr == 0) ? null : new MPSolver(cPtr, true);
   }
 
   public static boolean supportsProblemType(MPSolver.OptimizationProblemType problem_type) {
-    return main_research_linear_solverJNI.MPSolver_supportsProblemType(problem_type.swigValue());
+    return mainJNI.MPSolver_supportsProblemType(problem_type.swigValue());
   }
 
   public static boolean parseAndCheckSupportForProblemType(String solver_id) {
-    return main_research_linear_solverJNI.MPSolver_parseAndCheckSupportForProblemType(solver_id);
+    return mainJNI.MPSolver_parseAndCheckSupportForProblemType(solver_id);
   }
 
   public boolean isMip() {
-    return main_research_linear_solverJNI.MPSolver_isMip(swigCPtr, this);
+    return mainJNI.MPSolver_isMip(swigCPtr, this);
   }
 
   public void clear() {
-    main_research_linear_solverJNI.MPSolver_clear(swigCPtr, this);
+    mainJNI.MPSolver_clear(swigCPtr, this);
   }
 
   public int numVariables() {
-    return main_research_linear_solverJNI.MPSolver_numVariables(swigCPtr, this);
+    return mainJNI.MPSolver_numVariables(swigCPtr, this);
   }
 
   public MPVariable[] variables() {
-  return main_research_linear_solverJNI.MPSolver_variables(swigCPtr, this);
+  return mainJNI.MPSolver_variables(swigCPtr, this);
 }
 
   public MPVariable lookupVariableOrNull(String var_name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_lookupVariableOrNull(swigCPtr, this, var_name);
+    long cPtr = mainJNI.MPSolver_lookupVariableOrNull(swigCPtr, this, var_name);
     return (cPtr == 0) ? null : new MPVariable(cPtr, false);
   }
 
   public MPVariable makeVar(double lb, double ub, boolean integer, String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeVar(swigCPtr, this, lb, ub, integer, name);
+    long cPtr = mainJNI.MPSolver_makeVar(swigCPtr, this, lb, ub, integer, name);
     return (cPtr == 0) ? null : new MPVariable(cPtr, false);
   }
 
   public MPVariable makeNumVar(double lb, double ub, String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeNumVar(swigCPtr, this, lb, ub, name);
+    long cPtr = mainJNI.MPSolver_makeNumVar(swigCPtr, this, lb, ub, name);
     return (cPtr == 0) ? null : new MPVariable(cPtr, false);
   }
 
   public MPVariable makeIntVar(double lb, double ub, String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeIntVar(swigCPtr, this, lb, ub, name);
+    long cPtr = mainJNI.MPSolver_makeIntVar(swigCPtr, this, lb, ub, name);
     return (cPtr == 0) ? null : new MPVariable(cPtr, false);
   }
 
   public MPVariable makeBoolVar(String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeBoolVar(swigCPtr, this, name);
+    long cPtr = mainJNI.MPSolver_makeBoolVar(swigCPtr, this, name);
     return (cPtr == 0) ? null : new MPVariable(cPtr, false);
   }
 
   public int numConstraints() {
-    return main_research_linear_solverJNI.MPSolver_numConstraints(swigCPtr, this);
+    return mainJNI.MPSolver_numConstraints(swigCPtr, this);
   }
 
   public MPConstraint[] constraints() {
-  return main_research_linear_solverJNI.MPSolver_constraints(swigCPtr, this);
+  return mainJNI.MPSolver_constraints(swigCPtr, this);
 }
 
   public MPConstraint lookupConstraintOrNull(String constraint_name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_lookupConstraintOrNull(swigCPtr, this, constraint_name);
+    long cPtr = mainJNI.MPSolver_lookupConstraintOrNull(swigCPtr, this, constraint_name);
     return (cPtr == 0) ? null : new MPConstraint(cPtr, false);
   }
 
   public MPConstraint makeConstraint(double lb, double ub) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeConstraint__SWIG_0(swigCPtr, this, lb, ub);
+    long cPtr = mainJNI.MPSolver_makeConstraint__SWIG_0(swigCPtr, this, lb, ub);
     return (cPtr == 0) ? null : new MPConstraint(cPtr, false);
   }
 
   public MPConstraint makeConstraint() {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeConstraint__SWIG_1(swigCPtr, this);
+    long cPtr = mainJNI.MPSolver_makeConstraint__SWIG_1(swigCPtr, this);
     return (cPtr == 0) ? null : new MPConstraint(cPtr, false);
   }
 
   public MPConstraint makeConstraint(double lb, double ub, String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeConstraint__SWIG_2(swigCPtr, this, lb, ub, name);
+    long cPtr = mainJNI.MPSolver_makeConstraint__SWIG_2(swigCPtr, this, lb, ub, name);
     return (cPtr == 0) ? null : new MPConstraint(cPtr, false);
   }
 
   public MPConstraint makeConstraint(String name) {
-    long cPtr = main_research_linear_solverJNI.MPSolver_makeConstraint__SWIG_3(swigCPtr, this, name);
+    long cPtr = mainJNI.MPSolver_makeConstraint__SWIG_3(swigCPtr, this, name);
     return (cPtr == 0) ? null : new MPConstraint(cPtr, false);
   }
 
   public MPObjective objective() {
-    long cPtr = main_research_linear_solverJNI.MPSolver_objective(swigCPtr, this);
+    long cPtr = mainJNI.MPSolver_objective(swigCPtr, this);
     return (cPtr == 0) ? null : new MPObjective(cPtr, false);
   }
 
   public MPSolver.ResultStatus solve() {
-    return MPSolver.ResultStatus.swigToEnum(main_research_linear_solverJNI.MPSolver_solve__SWIG_0(swigCPtr, this));
+    return MPSolver.ResultStatus.swigToEnum(mainJNI.MPSolver_solve__SWIG_0(swigCPtr, this));
   }
 
   public MPSolver.ResultStatus solve(MPSolverParameters param) {
-    return MPSolver.ResultStatus.swigToEnum(main_research_linear_solverJNI.MPSolver_solve__SWIG_1(swigCPtr, this, MPSolverParameters.getCPtr(param), param));
+    return MPSolver.ResultStatus.swigToEnum(mainJNI.MPSolver_solve__SWIG_1(swigCPtr, this, MPSolverParameters.getCPtr(param), param));
   }
 
   public double[] computeConstraintActivities() {
-  return main_research_linear_solverJNI.MPSolver_computeConstraintActivities(swigCPtr, this);
+  return mainJNI.MPSolver_computeConstraintActivities(swigCPtr, this);
 }
 
   public boolean verifySolution(double tolerance, boolean log_errors) {
-    return main_research_linear_solverJNI.MPSolver_verifySolution(swigCPtr, this, tolerance, log_errors);
+    return mainJNI.MPSolver_verifySolution(swigCPtr, this, tolerance, log_errors);
   }
 
   public void reset() {
-    main_research_linear_solverJNI.MPSolver_reset(swigCPtr, this);
+    mainJNI.MPSolver_reset(swigCPtr, this);
   }
 
   public boolean interruptSolve() {
-    return main_research_linear_solverJNI.MPSolver_interruptSolve(swigCPtr, this);
+    return mainJNI.MPSolver_interruptSolve(swigCPtr, this);
   }
 
   public boolean setSolverSpecificParametersAsString(String parameters) {
-    return main_research_linear_solverJNI.MPSolver_setSolverSpecificParametersAsString(swigCPtr, this, parameters);
+    return mainJNI.MPSolver_setSolverSpecificParametersAsString(swigCPtr, this, parameters);
   }
 
   public static double infinity() {
-    return main_research_linear_solverJNI.MPSolver_infinity();
+    return mainJNI.MPSolver_infinity();
   }
 
   public void enableOutput() {
-    main_research_linear_solverJNI.MPSolver_enableOutput(swigCPtr, this);
+    mainJNI.MPSolver_enableOutput(swigCPtr, this);
   }
 
   public void suppressOutput() {
-    main_research_linear_solverJNI.MPSolver_suppressOutput(swigCPtr, this);
+    mainJNI.MPSolver_suppressOutput(swigCPtr, this);
   }
 
   public long iterations() {
-    return main_research_linear_solverJNI.MPSolver_iterations(swigCPtr, this);
+    return mainJNI.MPSolver_iterations(swigCPtr, this);
   }
 
   public long nodes() {
-    return main_research_linear_solverJNI.MPSolver_nodes(swigCPtr, this);
+    return mainJNI.MPSolver_nodes(swigCPtr, this);
   }
 
   public double computeExactConditionNumber() {
-    return main_research_linear_solverJNI.MPSolver_computeExactConditionNumber(swigCPtr, this);
+    return mainJNI.MPSolver_computeExactConditionNumber(swigCPtr, this);
   }
 
   public void setTimeLimit(long time_limit_milliseconds) {
-    main_research_linear_solverJNI.MPSolver_setTimeLimit(swigCPtr, this, time_limit_milliseconds);
+    mainJNI.MPSolver_setTimeLimit(swigCPtr, this, time_limit_milliseconds);
   }
 
   public long wallTime() {
-    return main_research_linear_solverJNI.MPSolver_wallTime(swigCPtr, this);
+    return mainJNI.MPSolver_wallTime(swigCPtr, this);
   }
 
   public static void setGurobiLibraryPath(String full_library_path) {
-    main_research_linear_solverJNI.MPSolver_setGurobiLibraryPath(full_library_path);
+    mainJNI.MPSolver_setGurobiLibraryPath(full_library_path);
   }
 
   public String loadModelFromProto(com.google.ortools.linearsolver.MPModelProto input_model) {
-    return main_research_linear_solverJNI.MPSolver_loadModelFromProto(swigCPtr, this, input_model.toByteArray());
+    return mainJNI.MPSolver_loadModelFromProto(swigCPtr, this, input_model.toByteArray());
   }
 
   public String loadModelFromProtoWithUniqueNamesOrDie(com.google.ortools.linearsolver.MPModelProto input_model) {
-    return main_research_linear_solverJNI.MPSolver_loadModelFromProtoWithUniqueNamesOrDie(swigCPtr, this, input_model.toByteArray());
+    return mainJNI.MPSolver_loadModelFromProtoWithUniqueNamesOrDie(swigCPtr, this, input_model.toByteArray());
   }
 
   public com.google.ortools.linearsolver.MPModelProto exportModelToProto() {
-  byte[] buf = main_research_linear_solverJNI.MPSolver_exportModelToProto(swigCPtr, this);
+  byte[] buf = mainJNI.MPSolver_exportModelToProto(swigCPtr, this);
   if (buf == null || buf.length == 0) {
     return null;
   }
@@ -266,7 +266,7 @@ public class MPSolver {
 }
 
   public com.google.ortools.linearsolver.MPSolutionResponse createSolutionResponseProto() {
-  byte[] buf = main_research_linear_solverJNI.MPSolver_createSolutionResponseProto(swigCPtr, this);
+  byte[] buf = mainJNI.MPSolver_createSolutionResponseProto(swigCPtr, this);
   if (buf == null || buf.length == 0) {
     return null;
   }
@@ -279,11 +279,11 @@ public class MPSolver {
 }
 
   public boolean loadSolutionFromProto(com.google.ortools.linearsolver.MPSolutionResponse response) {
-    return main_research_linear_solverJNI.MPSolver_loadSolutionFromProto(swigCPtr, this, response.toByteArray());
+    return mainJNI.MPSolver_loadSolutionFromProto(swigCPtr, this, response.toByteArray());
   }
 
   public static com.google.ortools.linearsolver.MPSolutionResponse solveWithProto(com.google.ortools.linearsolver.MPModelRequest model_request) {
-  byte[] buf = main_research_linear_solverJNI.MPSolver_solveWithProto(model_request.toByteArray());
+  byte[] buf = mainJNI.MPSolver_solveWithProto(model_request.toByteArray());
   if (buf == null || buf.length == 0) {
     return null;
   }
@@ -296,44 +296,44 @@ public class MPSolver {
 }
 
   public String exportModelAsLpFormat(MPModelExportOptions options) {
-    return main_research_linear_solverJNI.MPSolver_exportModelAsLpFormat__SWIG_0(swigCPtr, this, MPModelExportOptions.getCPtr(options), options);
+    return mainJNI.MPSolver_exportModelAsLpFormat__SWIG_0(swigCPtr, this, MPModelExportOptions.getCPtr(options), options);
   }
 
   public String exportModelAsLpFormat() {
-    return main_research_linear_solverJNI.MPSolver_exportModelAsLpFormat__SWIG_1(swigCPtr, this);
+    return mainJNI.MPSolver_exportModelAsLpFormat__SWIG_1(swigCPtr, this);
   }
 
   public String exportModelAsMpsFormat(MPModelExportOptions options) {
-    return main_research_linear_solverJNI.MPSolver_exportModelAsMpsFormat__SWIG_0(swigCPtr, this, MPModelExportOptions.getCPtr(options), options);
+    return mainJNI.MPSolver_exportModelAsMpsFormat__SWIG_0(swigCPtr, this, MPModelExportOptions.getCPtr(options), options);
   }
 
   public String exportModelAsMpsFormat() {
-    return main_research_linear_solverJNI.MPSolver_exportModelAsMpsFormat__SWIG_1(swigCPtr, this);
+    return mainJNI.MPSolver_exportModelAsMpsFormat__SWIG_1(swigCPtr, this);
   }
 
   public void setHint(MPVariable[] variables, double[] values) {
-    main_research_linear_solverJNI.MPSolver_setHint(swigCPtr, this, variables, values);
+    mainJNI.MPSolver_setHint(swigCPtr, this, variables, values);
   }
 
   public boolean setNumThreads(int num_theads) {
-    return main_research_linear_solverJNI.MPSolver_setNumThreads(swigCPtr, this, num_theads);
+    return mainJNI.MPSolver_setNumThreads(swigCPtr, this, num_theads);
   }
 
   public enum OptimizationProblemType {
-    CLP_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_CLP_LINEAR_PROGRAMMING_get()),
-    GLPK_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_GLPK_LINEAR_PROGRAMMING_get()),
-    GLOP_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_GLOP_LINEAR_PROGRAMMING_get()),
-    SCIP_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_SCIP_MIXED_INTEGER_PROGRAMMING_get()),
-    GLPK_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_GLPK_MIXED_INTEGER_PROGRAMMING_get()),
-    CBC_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_CBC_MIXED_INTEGER_PROGRAMMING_get()),
-    GUROBI_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_GUROBI_LINEAR_PROGRAMMING_get()),
-    GUROBI_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_GUROBI_MIXED_INTEGER_PROGRAMMING_get()),
-    CPLEX_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_CPLEX_LINEAR_PROGRAMMING_get()),
-    CPLEX_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_CPLEX_MIXED_INTEGER_PROGRAMMING_get()),
-    XPRESS_LINEAR_PROGRAMMING(main_research_linear_solverJNI.MPSolver_XPRESS_LINEAR_PROGRAMMING_get()),
-    XPRESS_MIXED_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_XPRESS_MIXED_INTEGER_PROGRAMMING_get()),
-    BOP_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_BOP_INTEGER_PROGRAMMING_get()),
-    SAT_INTEGER_PROGRAMMING(main_research_linear_solverJNI.MPSolver_SAT_INTEGER_PROGRAMMING_get());
+    CLP_LINEAR_PROGRAMMING(mainJNI.MPSolver_CLP_LINEAR_PROGRAMMING_get()),
+    GLPK_LINEAR_PROGRAMMING(mainJNI.MPSolver_GLPK_LINEAR_PROGRAMMING_get()),
+    GLOP_LINEAR_PROGRAMMING(mainJNI.MPSolver_GLOP_LINEAR_PROGRAMMING_get()),
+    SCIP_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_SCIP_MIXED_INTEGER_PROGRAMMING_get()),
+    GLPK_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_GLPK_MIXED_INTEGER_PROGRAMMING_get()),
+    CBC_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_CBC_MIXED_INTEGER_PROGRAMMING_get()),
+    GUROBI_LINEAR_PROGRAMMING(mainJNI.MPSolver_GUROBI_LINEAR_PROGRAMMING_get()),
+    GUROBI_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_GUROBI_MIXED_INTEGER_PROGRAMMING_get()),
+    CPLEX_LINEAR_PROGRAMMING(mainJNI.MPSolver_CPLEX_LINEAR_PROGRAMMING_get()),
+    CPLEX_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_CPLEX_MIXED_INTEGER_PROGRAMMING_get()),
+    XPRESS_LINEAR_PROGRAMMING(mainJNI.MPSolver_XPRESS_LINEAR_PROGRAMMING_get()),
+    XPRESS_MIXED_INTEGER_PROGRAMMING(mainJNI.MPSolver_XPRESS_MIXED_INTEGER_PROGRAMMING_get()),
+    BOP_INTEGER_PROGRAMMING(mainJNI.MPSolver_BOP_INTEGER_PROGRAMMING_get()),
+    SAT_INTEGER_PROGRAMMING(mainJNI.MPSolver_SAT_INTEGER_PROGRAMMING_get());
 
     public final int swigValue() {
       return swigValue;
@@ -379,7 +379,7 @@ public class MPSolver {
     INFEASIBLE,
     UNBOUNDED,
     ABNORMAL,
-    NOT_SOLVED(main_research_linear_solverJNI.MPSolver_NOT_SOLVED_get());
+    NOT_SOLVED(mainJNI.MPSolver_NOT_SOLVED_get());
 
     public final int swigValue() {
       return swigValue;
@@ -420,7 +420,7 @@ public class MPSolver {
   }
 
   public enum BasisStatus {
-    FREE(main_research_linear_solverJNI.MPSolver_FREE_get()),
+    FREE(mainJNI.MPSolver_FREE_get()),
     AT_LOWER_BOUND,
     AT_UPPER_BOUND,
     FIXED_VALUE,

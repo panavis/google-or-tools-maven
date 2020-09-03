@@ -31,56 +31,56 @@ public class MPSolverParameters {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPSolverParameters(swigCPtr);
+        mainJNI.delete_MPSolverParameters(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public static double getKDefaultRelativeMipGap() {
-    return main_research_linear_solverJNI.MPSolverParameters_kDefaultRelativeMipGap_get();
+    return mainJNI.MPSolverParameters_kDefaultRelativeMipGap_get();
   }
 
   public static double getKDefaultPrimalTolerance() {
-    return main_research_linear_solverJNI.MPSolverParameters_kDefaultPrimalTolerance_get();
+    return mainJNI.MPSolverParameters_kDefaultPrimalTolerance_get();
   }
 
   public static double getKDefaultDualTolerance() {
-    return main_research_linear_solverJNI.MPSolverParameters_kDefaultDualTolerance_get();
+    return mainJNI.MPSolverParameters_kDefaultDualTolerance_get();
   }
 
   public static MPSolverParameters.PresolveValues getKDefaultPresolve() {
-    return MPSolverParameters.PresolveValues.swigToEnum(main_research_linear_solverJNI.MPSolverParameters_kDefaultPresolve_get());
+    return MPSolverParameters.PresolveValues.swigToEnum(mainJNI.MPSolverParameters_kDefaultPresolve_get());
   }
 
   public static MPSolverParameters.IncrementalityValues getKDefaultIncrementality() {
-    return MPSolverParameters.IncrementalityValues.swigToEnum(main_research_linear_solverJNI.MPSolverParameters_kDefaultIncrementality_get());
+    return MPSolverParameters.IncrementalityValues.swigToEnum(mainJNI.MPSolverParameters_kDefaultIncrementality_get());
   }
 
   public MPSolverParameters() {
-    this(main_research_linear_solverJNI.new_MPSolverParameters(), true);
+    this(mainJNI.new_MPSolverParameters(), true);
   }
 
   public void setDoubleParam(MPSolverParameters.DoubleParam param, double value) {
-    main_research_linear_solverJNI.MPSolverParameters_setDoubleParam(swigCPtr, this, param.swigValue(), value);
+    mainJNI.MPSolverParameters_setDoubleParam(swigCPtr, this, param.swigValue(), value);
   }
 
   public void setIntegerParam(MPSolverParameters.IntegerParam param, int value) {
-    main_research_linear_solverJNI.MPSolverParameters_setIntegerParam(swigCPtr, this, param.swigValue(), value);
+    mainJNI.MPSolverParameters_setIntegerParam(swigCPtr, this, param.swigValue(), value);
   }
 
   public double getDoubleParam(MPSolverParameters.DoubleParam param) {
-    return main_research_linear_solverJNI.MPSolverParameters_getDoubleParam(swigCPtr, this, param.swigValue());
+    return mainJNI.MPSolverParameters_getDoubleParam(swigCPtr, this, param.swigValue());
   }
 
   public int getIntegerParam(MPSolverParameters.IntegerParam param) {
-    return main_research_linear_solverJNI.MPSolverParameters_getIntegerParam(swigCPtr, this, param.swigValue());
+    return mainJNI.MPSolverParameters_getIntegerParam(swigCPtr, this, param.swigValue());
   }
 
   public enum DoubleParam {
-    RELATIVE_MIP_GAP(main_research_linear_solverJNI.MPSolverParameters_RELATIVE_MIP_GAP_get()),
-    PRIMAL_TOLERANCE(main_research_linear_solverJNI.MPSolverParameters_PRIMAL_TOLERANCE_get()),
-    DUAL_TOLERANCE(main_research_linear_solverJNI.MPSolverParameters_DUAL_TOLERANCE_get());
+    RELATIVE_MIP_GAP(mainJNI.MPSolverParameters_RELATIVE_MIP_GAP_get()),
+    PRIMAL_TOLERANCE(mainJNI.MPSolverParameters_PRIMAL_TOLERANCE_get()),
+    DUAL_TOLERANCE(mainJNI.MPSolverParameters_DUAL_TOLERANCE_get());
 
     public final int swigValue() {
       return swigValue;
@@ -121,10 +121,10 @@ public class MPSolverParameters {
   }
 
   public enum IntegerParam {
-    PRESOLVE(main_research_linear_solverJNI.MPSolverParameters_PRESOLVE_get()),
-    LP_ALGORITHM(main_research_linear_solverJNI.MPSolverParameters_LP_ALGORITHM_get()),
-    INCREMENTALITY(main_research_linear_solverJNI.MPSolverParameters_INCREMENTALITY_get()),
-    SCALING(main_research_linear_solverJNI.MPSolverParameters_SCALING_get());
+    PRESOLVE(mainJNI.MPSolverParameters_PRESOLVE_get()),
+    LP_ALGORITHM(mainJNI.MPSolverParameters_LP_ALGORITHM_get()),
+    INCREMENTALITY(mainJNI.MPSolverParameters_INCREMENTALITY_get()),
+    SCALING(mainJNI.MPSolverParameters_SCALING_get());
 
     public final int swigValue() {
       return swigValue;
@@ -165,8 +165,8 @@ public class MPSolverParameters {
   }
 
   public enum PresolveValues {
-    PRESOLVE_OFF(main_research_linear_solverJNI.MPSolverParameters_PRESOLVE_OFF_get()),
-    PRESOLVE_ON(main_research_linear_solverJNI.MPSolverParameters_PRESOLVE_ON_get());
+    PRESOLVE_OFF(mainJNI.MPSolverParameters_PRESOLVE_OFF_get()),
+    PRESOLVE_ON(mainJNI.MPSolverParameters_PRESOLVE_ON_get());
 
     public final int swigValue() {
       return swigValue;
@@ -207,9 +207,9 @@ public class MPSolverParameters {
   }
 
   public enum LpAlgorithmValues {
-    DUAL(main_research_linear_solverJNI.MPSolverParameters_DUAL_get()),
-    PRIMAL(main_research_linear_solverJNI.MPSolverParameters_PRIMAL_get()),
-    BARRIER(main_research_linear_solverJNI.MPSolverParameters_BARRIER_get());
+    DUAL(mainJNI.MPSolverParameters_DUAL_get()),
+    PRIMAL(mainJNI.MPSolverParameters_PRIMAL_get()),
+    BARRIER(mainJNI.MPSolverParameters_BARRIER_get());
 
     public final int swigValue() {
       return swigValue;
@@ -250,8 +250,8 @@ public class MPSolverParameters {
   }
 
   public enum IncrementalityValues {
-    INCREMENTALITY_OFF(main_research_linear_solverJNI.MPSolverParameters_INCREMENTALITY_OFF_get()),
-    INCREMENTALITY_ON(main_research_linear_solverJNI.MPSolverParameters_INCREMENTALITY_ON_get());
+    INCREMENTALITY_OFF(mainJNI.MPSolverParameters_INCREMENTALITY_OFF_get()),
+    INCREMENTALITY_ON(mainJNI.MPSolverParameters_INCREMENTALITY_ON_get());
 
     public final int swigValue() {
       return swigValue;
@@ -292,8 +292,8 @@ public class MPSolverParameters {
   }
 
   public enum ScalingValues {
-    SCALING_OFF(main_research_linear_solverJNI.MPSolverParameters_SCALING_OFF_get()),
-    SCALING_ON(main_research_linear_solverJNI.MPSolverParameters_SCALING_ON_get());
+    SCALING_OFF(mainJNI.MPSolverParameters_SCALING_OFF_get()),
+    SCALING_ON(mainJNI.MPSolverParameters_SCALING_ON_get());
 
     public final int swigValue() {
       return swigValue;

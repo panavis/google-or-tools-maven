@@ -31,54 +31,54 @@ public class MPVariable {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        main_research_linear_solverJNI.delete_MPVariable(swigCPtr);
+        mainJNI.delete_MPVariable(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public String name() {
-    return main_research_linear_solverJNI.MPVariable_name(swigCPtr, this);
+    return mainJNI.MPVariable_name(swigCPtr, this);
   }
 
   public void setInteger(boolean integer) {
-    main_research_linear_solverJNI.MPVariable_setInteger(swigCPtr, this, integer);
+    mainJNI.MPVariable_setInteger(swigCPtr, this, integer);
   }
 
   public double solutionValue() {
-    return main_research_linear_solverJNI.MPVariable_solutionValue(swigCPtr, this);
+    return mainJNI.MPVariable_solutionValue(swigCPtr, this);
   }
 
   public int index() {
-    return main_research_linear_solverJNI.MPVariable_index(swigCPtr, this);
+    return mainJNI.MPVariable_index(swigCPtr, this);
   }
 
   public double lb() {
-    return main_research_linear_solverJNI.MPVariable_lb(swigCPtr, this);
+    return mainJNI.MPVariable_lb(swigCPtr, this);
   }
 
   public double ub() {
-    return main_research_linear_solverJNI.MPVariable_ub(swigCPtr, this);
+    return mainJNI.MPVariable_ub(swigCPtr, this);
   }
 
   public void setLb(double lb) {
-    main_research_linear_solverJNI.MPVariable_setLb(swigCPtr, this, lb);
+    mainJNI.MPVariable_setLb(swigCPtr, this, lb);
   }
 
   public void setUb(double ub) {
-    main_research_linear_solverJNI.MPVariable_setUb(swigCPtr, this, ub);
+    mainJNI.MPVariable_setUb(swigCPtr, this, ub);
   }
 
   public void setBounds(double lb, double ub) {
-    main_research_linear_solverJNI.MPVariable_setBounds(swigCPtr, this, lb, ub);
+    mainJNI.MPVariable_setBounds(swigCPtr, this, lb, ub);
   }
 
   public double reducedCost() {
-    return main_research_linear_solverJNI.MPVariable_reducedCost(swigCPtr, this);
+    return mainJNI.MPVariable_reducedCost(swigCPtr, this);
   }
 
   public MPSolver.BasisStatus basisStatus() {
-    return MPSolver.BasisStatus.swigToEnum(main_research_linear_solverJNI.MPVariable_basisStatus(swigCPtr, this));
+    return MPSolver.BasisStatus.swigToEnum(mainJNI.MPVariable_basisStatus(swigCPtr, this));
   }
 
 }
