@@ -4,7 +4,7 @@
 
 <groupId>com.panavis.open-source</groupId>
 <artifactId>google-ortools-java</artifactId>
-<version>7.8.7960</version>
+<version>7.8.7961-SNAPSHOT</version>
 <name>Google OR-Tools for Maven</name>
 <description>Publishing Google OR-Tools as a Maven dependency</description>
 <url>https://github.com/panavis/google-or-tools-maven</url>
@@ -29,7 +29,7 @@
   <connection>scm:git:git://github.com/panavis/google-or-tools-maven.git</connection>
   <developerConnection>scm:git:ssh://github.com/panavis/google-or-tools-maven.git</developerConnection>
   <url>http://github.com/panavis/google-or-tools-maven</url>
-  <tag>google-ortools-java-7.8.7960</tag>
+  <tag>google-ortools-7.8.7959</tag>
 </scm>
 
 <issueManagement>
