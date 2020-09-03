@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 <modelVersion>4.0.0</modelVersion>
 
 <groupId>com.panavis.open-source</groupId>
@@ -32,7 +29,7 @@
   <connection>scm:git:git://github.com/panavis/google-or-tools-maven.git</connection>
   <developerConnection>scm:git:ssh://github.com/panavis/google-or-tools-maven.git</developerConnection>
   <url>http://github.com/panavis/google-or-tools-maven</url>
-  <tag>google-ortools-7.8.7959</tag>
+  <tag>google-ortools-java-7.8.7959</tag>
 </scm>
 
 <issueManagement>
@@ -113,7 +110,10 @@
       <artifactId>maven-release-plugin</artifactId>
       <version>2.5.3</version>
       <configuration>
-        <localCheckout>false</localCheckout>
+        <checkModificationExcludes>
+          <checkModificationExclude>pom.xml</checkModificationExclude>
+        </checkModificationExcludes>
+        <localCheckout>true</localCheckout>
         <pushChanges>false</pushChanges>
         <mavenExecutorId>forked-path</mavenExecutorId>
         <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
