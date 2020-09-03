@@ -4,7 +4,7 @@
 
 <groupId>com.panavis.open-source</groupId>
 <artifactId>google-ortools-java</artifactId>
-<version>7.8.7960-SNAPSHOT</version>
+<version>7.8.7960</version>
 <name>Google OR-Tools for Maven</name>
 <description>Publishing Google OR-Tools as a Maven dependency</description>
 <url>https://github.com/panavis/google-or-tools-maven</url>
@@ -29,7 +29,7 @@
   <connection>scm:git:git://github.com/panavis/google-or-tools-maven.git</connection>
   <developerConnection>scm:git:ssh://github.com/panavis/google-or-tools-maven.git</developerConnection>
   <url>http://github.com/panavis/google-or-tools-maven</url>
-  <tag>google-ortools-7.8.7959</tag>
+  <tag>google-ortools-java-7.8.7960</tag>
 </scm>
 
 <issueManagement>
@@ -92,14 +92,24 @@
 <build>
   <plugins>
     <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-source-plugin</artifactId>
-      <version>3.2.0</version>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>fully.qualified.MainClass</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+        <appendAssemblyId>false</appendAssemblyId>
+      </configuration>
       <executions>
         <execution>
-          <id>attach-sources</id>
+          <id>make-assembly</id>
+          <phase>package</phase>
           <goals>
-            <goal>jar-no-fork</goal>
+            <goal>single</goal>
           </goals>
         </execution>
       </executions>
