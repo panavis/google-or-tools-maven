@@ -23,10 +23,6 @@ Java classes and JNI libraries will be generated in `or-tools/java`
 From the `ortools-linux-x86-64`, grab the jar file.  
 Add to the `ortools-java` project as a local dependency.
 
-**Note**: For the build part, make sure to use `maven-assembly-plugin`  
-plugin with `jar-with-dependencies`. If not, the jar with native libraries  
-will NOT be added to the resulting project jar.
-
 ### Publishing To Maven Repository
 
 Mostly followed: https://dzone.com/articles/publish-your-artifacts-to-maven-central  

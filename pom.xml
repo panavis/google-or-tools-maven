@@ -4,7 +4,7 @@
 
 <groupId>com.panavis.open-source</groupId>
 <artifactId>google-ortools-java</artifactId>
-<version>7.8.7961-SNAPSHOT</version>
+<version>7.8.7959-SNAPSHOT</version>
 <name>Google OR-Tools for Maven</name>
 <description>Publishing Google OR-Tools as a Maven dependency</description>
 <url>https://github.com/panavis/google-or-tools-maven</url>
@@ -48,14 +48,6 @@
   </repository>
 </distributionManagement>
 
-<repositories>
-    <repository>
-        <id>in-project</id>
-        <name>In Project Repo</name>
-        <url>file://${project.basedir}/lib</url>
-    </repository>
-</repositories>
-
 <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   <maven.compiler.source>1.8</maven.compiler.source>
@@ -63,13 +55,6 @@
 </properties>
 
 <dependencies>
-  <dependency>
-    <groupId>google</groupId>
-    <artifactId>ortools-linux-x86-64</artifactId>
-    <version>7.8.7959</version>
-    <type>jar</type>
-    <scope>runtime</scope>
-  </dependency>
   <dependency>
     <groupId>net.java.dev.jna</groupId>
     <artifactId>jna-platform</artifactId>
@@ -92,27 +77,16 @@
 <build>
   <plugins>
     <plugin>
-      <artifactId>maven-assembly-plugin</artifactId>
-      <configuration>
-        <archive>
-          <manifest>
-            <mainClass>fully.qualified.MainClass</mainClass>
-          </manifest>
-        </archive>
-        <descriptorRefs>
-          <descriptorRef>jar-with-dependencies</descriptorRef>
-        </descriptorRefs>
-        <appendAssemblyId>false</appendAssemblyId>
-      </configuration>
-      <executions>
-        <execution>
-          <id>make-assembly</id>
-          <phase>package</phase>
-          <goals>
-            <goal>single</goal>
-          </goals>
-        </execution>
-      </executions>
+      <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+          <executions>
+            <execution>
+               <id>attach-sources</id>
+                <goals>
+                        <goal>jar-no-fork</goal>
+                </goals>
+            </execution>
+          </executions>
     </plugin>
 
     <plugin>
